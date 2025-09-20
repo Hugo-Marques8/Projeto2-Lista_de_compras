@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Minha Lista de Compras</h1>
+        </header>
+
+        <main id="secao-pergunta-inicial">
+            <p>Deseja adicionar um item à sua lista de compras?</p>
+            <button id="btn-iniciar-sim">Sim</button>
+        </main>
+
+        <main id="secao-adicionar-item" class="oculto">
+            <h2>Adicionar Novo Item</h2>
+            <div class="form-group">
+                <label for="nome-item">Nome do item:</label>
+                <input type="text" id="nome-item" placeholder="Ex: Leite Integral">
+            </div>
+            <div class="form-group">
+                <label for="categoria-item">Selecione a categoria:</label>
+                <select id="categoria-item">
+                    <option value="Frutas">Frutas</option>
+                    <option value="Laticínios">Laticínios</option>
+                    <option value="Congelados">Congelados</option>
+                    <option value="Doces">Doces</option>
+                    <option value="Padaria">Padaria</option>
+                    <option value="Limpeza">Limpeza</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+            <button id="btn-adicionar-item">Adicionar Item</button>
+            <div id="botao-acessar-lista">
+                <button id="btn-acessar-lista">Acessar lista </button>
+            </div>
+        </main>
+
+        <section id="secao-lista-final" class="oculto">
+            <h2>Lista completa</h2>
+            <div id="lista-agrupada">
+            </div>
+        </section>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
