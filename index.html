@@ -16,9 +16,24 @@
         </header>
 
         <main id="secao-pergunta-inicial">
-            <p>Deseja adicionar um item à sua lista de compras?</p>
+            <p>Deseja criar uma nova lista de compras?</p>
             <button id="btn-iniciar-sim">Sim</button>
         </main>
+        <main id="secao-Acessar-lista">
+            <h2>Lista de compras salvas</h2>
+            <p>Acessar lista de compras salva</p>
+            <button id="btn-Acessar">Acessar</button>
+        </main>
+
+        <section id="secao-nome-lista" class="oculto">
+            <h2>Dê um nome para sua lista</h2>
+            <div class="form-group">
+                <label for="nome-lista">Nome da Lista:</label>
+                <input type="text" id="nome-lista" placeholder="Ex: Compras do Mês">
+            </div>
+            <button id="btn-confirmar-nome">Confirmar</button>
+            <button class="voltar" data-acao="recarregar">Voltar</button>
+        </section>
 
         <main id="secao-adicionar-item" class="oculto">
             <h2>Adicionar Novo Item</h2>
@@ -29,29 +44,45 @@
             <div class="form-group">
                 <label for="categoria-item">Selecione a categoria:</label>
                 <select id="categoria-item">
-                    <option value="Frutas">Frutas</option>
-                    <option value="Laticínios">Laticínios</option>
+                    <option value="Mercearia">Mercearia</option>
+                    <option value="Hortifrúti">Hortifrúti</option>
+                    <option value="Açougue e Peixaria">Açougue e Peixaria</option>
                     <option value="Congelados">Congelados</option>
-                    <option value="Doces">Doces</option>
-                    <option value="Padaria">Padaria</option>
+                    <option value="Frios e Laticínios">Frios e Laticínios</option>
+                    <option value="Padaria e Confeitaria">Padaria e Confeitaria</option>
+                    <option value="Bebidas">Bebidas</option>
+                    <option value="Higiene Pessoal">Higiene Pessoal</option>
                     <option value="Limpeza">Limpeza</option>
+                    <option value="Artigos para o Lar">Artigos para o Lar</option>
+                    <option value="Bebê e Infantil">Bebê e Infantil</option>
+                    <option value="Pet Shop">Pet Shop</option>
+                    <option value="Papelaria">Papelaria</option>
+                    <option value="Utilidades Domésticas">Utilidades Domésticas</option>
                     <option value="Outros">Outros</option>
                 </select>
             </div>
             <button id="btn-adicionar-item">Adicionar Item</button>
-            <div id="botao-acessar-lista">
-                <button id="btn-acessar-lista">Acessar lista </button>
-            </div>
+            <button id="btn-acessar-lista">Acessar lista </button>
+            <button class="voltar" data-acao="recarregar">Sair</button>
         </main>
+
+        <section id="secao-lista-salva" class="oculto">
+            <h2>Escolha uma Lista</h2>
+        </section>
 
         <section id="secao-lista-final" class="oculto">
             <h2>Lista completa</h2>
             <div id="lista-agrupada">
             </div>
+            <button class="voltar" data-acao="recarregar">Voltar</button>
         </section>
 
     </div>
-    <script src="main.js"></script>
+
+    <script src="JavaScript/main.js" type="module"></script>
+    <script src="JavaScript/ui.js" type="module"></script>
+    <script src="JavaScript/utils.js" type="module"></script>
+    <script src="JavaScript/events.js" type="module"></script>
 </body>
 
 </html>
