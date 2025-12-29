@@ -1,4 +1,4 @@
-import { removerItem, savelocalStorage } from "./events.js"
+
 // objeto que vai armazenar as categorias e os itens dentro de cada categoria   
 export let listaCompras = {
 }
@@ -41,20 +41,10 @@ export function atualizarLista(listaCompras) {
             li.textContent = item // o textContent de li recebe o valor de item
 
             const btn = document.createElement('button')
-            const btnRemover = document.createElement('button')
             btn.textContent = 'Carrinho'
-            btnRemover.textContent = 'Remover'
-            btnRemover.classList.add('btnRemoverItem')
-            btnRemover.addEventListener('click', () => {
-                removerItem(listaCompras, categoria, item)
-                savelocalStorage(nomeLista, listaCompras)
-                atualizarLista(listaCompras)
-
-            })
             btn.addEventListener('click', () => btn.classList.toggle('btnItemEvent')) // Muda a cor do botão quando clicar )
             div.appendChild(li)
             div.appendChild(btn)
-            div.appendChild(btnRemover)
             ul.appendChild(div)
 
         });
