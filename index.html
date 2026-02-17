@@ -14,15 +14,17 @@
         <header>
             <h1>Minha Lista de Compras</h1>
         </header>
+        <main id="main">
+            <section id="secao-pergunta-inicial">
+                <p>Deseja criar uma nova lista de compras?</p>
+                <button id="btn-iniciar-sim">Sim</button>
+            </section>
 
-        <main id="secao-pergunta-inicial">
-            <p>Deseja criar uma nova lista de compras?</p>
-            <button id="btn-iniciar-sim">Sim</button>
-        </main>
-        <main id="secao-Acessar-lista">
-            <h2>Lista de compras salvas</h2>
-            <p>Acessar lista de compras salva</p>
-            <button id="btn-Acessar">Acessar</button>
+            <section id="secao-Acessar-lista">
+                <h2>Lista de compras salvas</h2>
+                <p>Acessar lista de compras salva</p>
+                <button id="btn-Acessar">Acessar</button>
+            </section>
         </main>
 
         <section id="secao-nome-lista" class="oculto">
@@ -32,10 +34,10 @@
                 <input type="text" id="nome-lista" placeholder="Ex: Compras do Mês">
             </div>
             <button id="btn-confirmar-nome">Confirmar</button>
-            <button class="voltar" data-acao="recarregar">Voltar</button>
+            <button class="voltar" data-acao="voltar-inicio">Voltar</button>
         </section>
 
-        <main id="secao-adicionar-item" class="oculto">
+        <section id="secao-adicionar-item" class="oculto">
             <h2>Adicionar Novo Item</h2>
             <div class="form-group">
                 <label for="nome-item">Nome do item:</label>
@@ -64,7 +66,7 @@
             <button id="btn-adicionar-item">Adicionar Item</button>
             <button id="btn-acessar-lista">Acessar lista </button>
             <button class="voltar" data-acao="recarregar">Sair</button>
-        </main>
+        </section>
 
         <section id="secao-lista-salva" class="oculto">
             <h2>Escolha uma Lista</h2>
@@ -74,7 +76,7 @@
             <h2>Lista completa</h2>
             <div id="lista-agrupada">
             </div>
-            <button class="voltar" data-acao="recarregar">Voltar</button>
+            <button class="voltar" data-acao="voltar-lista">Voltar</button>
         </section>
 
     </div>

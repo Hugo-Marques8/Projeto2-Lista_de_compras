@@ -39,10 +39,11 @@ btnAcessarLista.addEventListener('click', () => {
     if (botaoAdicionarClicado) {
         const secaolista = document.getElementById('secao-lista-final')
         const secaoAdicioar = document.getElementById('secao-adicionar-item')
+        secaoAdicioar.classList.remove('visivel')
         secaoAdicioar.classList.add('oculto')
         secaolista.classList.remove('oculto')
         const btnVoltar = document.querySelector('#secao-lista-final .voltar')
-        btnVoltar.dataset.acao = 'voltar' // Define a ação para "voltar"
+        btnVoltar.dataset.acao = 'voltar-adicionar' // Define a ação para "voltar"
         atualizarLista(listaCompras)
     }
 })

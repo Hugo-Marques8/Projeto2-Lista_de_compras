@@ -1,13 +1,11 @@
 export function criarNomeLista() {
-    const secaoInicial = document.getElementById('secao-pergunta-inicial')
-    const secaoAcessarLista = document.getElementById('secao-Acessar-lista')
+    const main = document.getElementById('main')
     const nomeParaLista = document.getElementById('secao-nome-lista')
     const secaoListaSalva = document.getElementById('secao-lista-salva')
-    const secaoListaFinal =  document.getElementById('secao-lista-final')
+    const secaoListaFinal = document.getElementById('secao-lista-final')
     nomeParaLista.classList.remove('oculto')
     nomeParaLista.classList.add('visivel')
-    secaoInicial.classList.add('oculto')
-    secaoAcessarLista.classList.add('oculto')
+    main.classList.add('oculto')
     secaoListaSalva.classList.add('oculto')
     secaoListaFinal.classList.add('oculto')
 }
@@ -15,8 +13,10 @@ export function criarNomeLista() {
 export function irParaCriacao() {
     const nomeParaLista = document.getElementById('secao-nome-lista')
     const secaoAdicionar = document.getElementById('secao-adicionar-item')
+    nomeParaLista.classList.remove('visivel')
     nomeParaLista.classList.add('oculto')
     secaoAdicionar.classList.remove('oculto')
+    secaoAdicionar.classList.add('visivel')
 }
 
 export function savelocalStorage(nomeLista, listaCompras) {
@@ -25,17 +25,37 @@ export function savelocalStorage(nomeLista, listaCompras) {
 
 export function btnVoltar() {
     const btns = document.querySelectorAll('.voltar')
+    const main = document.getElementById('main')
+    const nomeParaLista = document.getElementById('secao-nome-lista')
+    const secaoAcessarListaSalva = document.getElementById('secao-Acessar-lista')
+    const secaoListaSalva = document.getElementById('secao-lista-salva')
+    const listaFinal = document.getElementById('secao-lista-final')
+    const secaoAdicioar = document.getElementById('secao-adicionar-item')
     btns.forEach(btn => {
         btn.addEventListener('click', (event) => {
             const acao = event.target.dataset.acao
+            if (acao === 'voltar-inicio') {
+                nomeParaLista.classList.remove('visivel')
+                nomeParaLista.classList.add('oculto')
+                main.classList.remove('oculto')
+                secaoAcessarListaSalva.classList.remove('oculto')
+                secaoListaSalva.replaceChildren()
+            }
+            if (acao === 'voltar-lista') {
+                //secaoAcessarListaSalva.classList.remove('oculto')
+                listaFinal.classList.add('oculto')
+                secaoListaSalva.classList.remove('oculto')
+
+            }
+
+            if (acao === 'voltar-adicionar') {
+                //secaoAcessarListaSalva.classList.remove('oculto')
+                listaFinal.classList.add('oculto')
+                secaoAdicioar.classList.add('visivel')
+                secaoAdicioar.classList.remove('oculto')
+            }
             if (acao === 'recarregar') {
                 window.location.reload()
-            }
-            if (acao === 'voltar') {
-                // Esconde a lista final
-                document.getElementById('secao-lista-final').classList.add('oculto');
-                // Mostra a seção de adicionar item de novo
-                document.getElementById('secao-adicionar-item').classList.remove('oculto');
             }
         }
         )
